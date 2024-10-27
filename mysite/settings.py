@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o1)(frwgm(uv9tv(gap0dt!$w&6tf@rl7o9^4q3qc7c7b^$@!k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'urllib3',
+    # COMMENT THE ABOVE LINE OUT TO FIX FLAW
 ]
 
 MIDDLEWARE = [
@@ -122,3 +124,25 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# THE FOLLOWING CODE CREATES A LOGGER:
+
+#LOGGING = {
+#    "version": 1,
+#    "disable_existing_loggers": False,
+#    "handlers": {
+#        "file": {
+#            "level": "INFO",
+#            "class": "logging.FileHandler",
+#            "filename": "./debug.log",
+#        },
+#    },
+#    "loggers": {
+#        "django": {
+#            "handlers": ["file"],
+#            "level": "INFO",
+#            "propagate": True,
+#        },
+#    },
+#}
