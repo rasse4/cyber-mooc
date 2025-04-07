@@ -7,6 +7,8 @@ python manage.py runserver
 
 You might need to run these commands:
 
+./install.sh
+
 python manage.py makemigrations
 
 python manage.py migrate
